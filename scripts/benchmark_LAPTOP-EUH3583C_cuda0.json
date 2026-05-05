@@ -1,0 +1,20 @@
+{
+  "hostname": "LAPTOP-EUH3583C",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "python": "3.10.20",
+  "torch": "2.11.0+cu126",
+  "cuda_available": true,
+  "cuda_device_count": 1,
+  "device": "cuda:0",
+  "device_name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "matmul": {
+    "seconds_per_iter": 0.0221091500017792,
+    "tflops": 6.2163834186723514
+  },
+  "conv2d": {
+    "seconds_per_iter": 0.018164130009245126
+  },
+  "train_step": {
+    "seconds_per_iter": 0.00439662499120459
+  }
+}
