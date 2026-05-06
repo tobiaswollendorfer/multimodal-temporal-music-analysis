@@ -1,0 +1,16 @@
+name: master-thesis
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pandas
+  - numpy
+  - tqdm
+  - scikit-learn
+  - scipy
+  - plotly
+  - jupyterlab
+  - pip
+  - pip:
+    - umap-learn
