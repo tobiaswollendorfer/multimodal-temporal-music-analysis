@@ -1,3 +1,10 @@
+__pycache__/
+*.pyc
+.idea/
+.ipynb_checkpoints/
+data/
+outputs/
+*.parquet
 data/
 good_to_know/
 papers/
