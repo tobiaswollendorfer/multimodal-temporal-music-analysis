@@ -11,6 +11,8 @@ dependencies:
   - scipy
   - plotly
   - jupyterlab
+  - pyarrow
+  - fastparquet
   - pip
   - pip:
     - umap-learn
