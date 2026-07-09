@@ -12,10 +12,17 @@ def load_dataset_csv(dataset_name: str) -> pd.DataFrame:
     return pd.read_csv(path,sep="\t")
 
 
-def save_dataset_parquet(dataset: pd.DataFrame, save_name: str) -> None:
-    PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
-    path = PROCESSED_DIR / f"{save_name}.parquet"
+def save_dataset_parquet(
+    dataset: pd.DataFrame,
+    save_name: str,
+    save_dir: str | Path | None = None
+) -> None:
+    target_dir = Path(save_dir) if save_dir is not None else PROCESSED_DIR
+    target_dir.mkdir(parents=True, exist_ok=True)
+
+    path = target_dir / f"{save_name}.parquet"
     dataset.to_parquet(path, index=False)
+    
 
 def load_dataset_parquet(dataset_name: str) -> pd.DataFrame:
     PROCESSED_DIR.mkdir(parents=True, exist_ok=True)

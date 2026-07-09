@@ -2,6 +2,10 @@ import pandas as pd
 from utils.helper_functions import load_dataset_parquet, save_dataset_parquet
 
 
+window_size = 5
+hop_size = 1
+min_tracks = 20
+
 dataset_paths = {
     "essentia": "essentia.parquet",
     "lyrics_tf_idf": "lyrics_tf_idf.parquet",
@@ -11,41 +15,7 @@ dataset_paths = {
     "vgg19": "vgg19.parquet",
 }
 
-metadata_columns = ["id", "release", "genres"]
-
-"""
-This section loads each modality-specific dataset, identifies the feature columns by excluding metadata columns, and computes genre-level centroids by averaging all feature values per genre.
-
-Current output:
-- one centroid per genre and modality
-- no temporal windowing yet
-- release year is ignored in this version
-"""
-
-for modality, dataset_path in dataset_paths.items():
-    print(modality)
-
-    dataset = load_dataset_parquet(dataset_path)
-    print(dataset.columns)
-    print(dataset["genre"])
-    break
-    feature_columns = [
-        col for col in dataset.columns
-        if col not in metadata_columns
-        and pd.api.types.is_numeric_dtype(dataset[col])
-    ]
-
-    centroids = (
-        dataset
-        .groupby("genre")[feature_columns]
-        .mean()
-        .reset_index()
-    )
-
-    centroids["modality"] = modality
-    print(centroids.head())
-    print(centroids.shape)
-
+metadata_columns = ["id", "release", "genre"]
 
 """
 This section computes raw sliding-window centroids.
@@ -55,10 +25,6 @@ Within each window, it groups tracks by genre and averages all feature columns.
 The result is one raw centroid per genre, modality, and temporal window.
 Normalization is not applied in this section.
 """
-
-window_size = 5
-hop_size = 1
-min_tracks = 20
 
 for modality, dataset_path in dataset_paths.items():
     print(modality)
@@ -72,9 +38,8 @@ for modality, dataset_path in dataset_paths.items():
     feature_columns = [
         col for col in dataset.columns
         if col not in metadata_columns
-        and col != "genre"
         and pd.api.types.is_numeric_dtype(dataset[col])
-    ]
+]
 
     min_year = dataset["release"].min()
     print(min_year)
@@ -131,18 +96,13 @@ These centroids describe the relative position of a genre compared with the
 contemporary feature distribution of the same modality and time window.
 """
 
-window_size = 5
-hop_size = 1
-min_tracks = 20
+
 eps = 1e-8
 
 for modality, dataset_path in dataset_paths.items():
     print(modality)
 
     dataset = load_dataset_parquet(dataset_path)
-
-    if "genre" not in dataset.columns and "genres" in dataset.columns:
-        dataset["genre"] = dataset["genres"].astype(str).str.split(",").str[0].str.strip()
 
     dataset["release"] = pd.to_numeric(dataset["release"], errors="coerce")
     dataset = dataset.dropna(subset=["release", "genre"])
@@ -151,7 +111,6 @@ for modality, dataset_path in dataset_paths.items():
     feature_columns = [
         col for col in dataset.columns
         if col not in metadata_columns
-        and col != "genre"
         and pd.api.types.is_numeric_dtype(dataset[col])
     ]
 
