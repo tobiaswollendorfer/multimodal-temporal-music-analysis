@@ -1,4 +1,7 @@
+from datetime import datetime, timedelta
 from itertools import combinations
+from math import comb
+import time
 
 import numpy as np
 import pandas as pd
@@ -31,12 +34,26 @@ metadata_columns = [
     "n_tracks",
 ]
 
-rows = []
+datasets = {}
 
 for modality, dataset_path in dataset_paths.items():
-    print(modality)
+    datasets[modality] = load_dataset_parquet(dataset_path)
 
-    centroids = load_dataset_parquet(dataset_path)
+total_pairs = 0
+
+for centroids in datasets.values():
+    for _, window_data in centroids.groupby("window_start"):
+        if len(window_data) >= 2:
+            total_pairs += comb(len(window_data), 2)
+
+print(f"Total genre pairs: {total_pairs:,}")
+
+rows = []
+completed_pairs = 0
+start_time = time.time()
+
+for modality, centroids in datasets.items():
+    print(f"\nProcessing {modality}")
 
     feature_columns = [
         column
@@ -54,6 +71,8 @@ for modality, dataset_path in dataset_paths.items():
 
         if len(window_data) < 2:
             continue
+
+        window_pairs = comb(len(window_data), 2)
 
         for index_a, index_b in combinations(window_data.index, 2):
             row_a = window_data.loc[index_a]
@@ -91,6 +110,40 @@ for modality, dataset_path in dataset_paths.items():
                 "cosine_distance": distance,
             })
 
+        completed_pairs += window_pairs
+
+        elapsed_seconds = time.time() - start_time
+        pairs_per_second = (
+            completed_pairs / elapsed_seconds
+            if elapsed_seconds > 0
+            else 0
+        )
+
+        remaining_pairs = total_pairs - completed_pairs
+        remaining_seconds = (
+            remaining_pairs / pairs_per_second
+            if pairs_per_second > 0
+            else 0
+        )
+
+        finish_time = datetime.now() + timedelta(
+            seconds=remaining_seconds
+        )
+
+        progress = (
+            completed_pairs / total_pairs * 100
+            if total_pairs > 0
+            else 100
+        )
+
+        print(
+            f"{modality} | window {window_start} | "
+            f"{progress:.1f}% | "
+            f"{completed_pairs:,}/{total_pairs:,} pairs | "
+            f"ETA {finish_time:%H:%M:%S} | "
+            f"remaining {timedelta(seconds=int(remaining_seconds))}"
+        )
+
 pairwise_similarity = pd.DataFrame(rows)
 
 print(pairwise_similarity.head())
@@ -107,19 +160,6 @@ temporal_summary = (
     .groupby(["modality", "window_start", "window_end"])
     .agg(
         n_valid_pairs=("cosine_similarity", "count"),
-        n_valid_genres=(
-            "genre_a",
-            lambda values: len(
-                set(values).union(
-                    set(
-                        pairwise_similarity.loc[
-                            values.index,
-                            "genre_b"
-                        ]
-                    )
-                )
-            )
-        ),
         mean_cosine_similarity=("cosine_similarity", "mean"),
         median_cosine_similarity=("cosine_similarity", "median"),
         std_cosine_similarity=("cosine_similarity", "std"),
@@ -137,8 +177,15 @@ temporal_summary = (
     .reset_index()
 )
 
-print(temporal_summary.head())
-print(temporal_summary.shape)
+temporal_summary["n_valid_genres"] = (
+    (
+        1
+        + np.sqrt(
+            1 + 8 * temporal_summary["n_valid_pairs"]
+        )
+    )
+    / 2
+).round().astype(int)
 
 save_dataset_parquet(
     temporal_summary,
@@ -146,4 +193,9 @@ save_dataset_parquet(
     save_dir=PAIRWISE_PATH,
 )
 
-print("saved pairwise centroid similarity")
+total_runtime = timedelta(
+    seconds=int(time.time() - start_time)
+)
+
+print(f"\nFinished in {total_runtime}")
+print("Saved pairwise centroid similarity")
