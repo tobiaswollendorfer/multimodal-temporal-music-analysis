@@ -47,6 +47,7 @@ for centroids in datasets.values():
             total_pairs += comb(len(window_data), 2)
 
 print(f"Total genre pairs: {total_pairs:,}")
+
 rows = []
 completed_pairs = 0
 next_progress_report = 10
@@ -118,7 +119,10 @@ for modality, centroids in datasets.items():
             else 100
         )
 
-        if progress >= next_progress_report:
+        while (
+            progress >= next_progress_report
+            and next_progress_report <= 100
+        ):
             elapsed_seconds = time.time() - start_time
 
             pairs_per_second = (
@@ -146,8 +150,8 @@ for modality, centroids in datasets.items():
                 f"remaining {timedelta(seconds=int(remaining_seconds))}"
             )
 
-            while progress >= next_progress_report:
-                next_progress_report += 10
+            next_progress_report += 10
+
 pairwise_similarity = pd.DataFrame(rows)
 
 print(pairwise_similarity.head())
@@ -190,6 +194,9 @@ temporal_summary["n_valid_genres"] = (
     )
     / 2
 ).round().astype(int)
+
+print(temporal_summary.head())
+print(temporal_summary.shape)
 
 save_dataset_parquet(
     temporal_summary,
