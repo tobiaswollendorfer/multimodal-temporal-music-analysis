@@ -1,5 +1,5 @@
 import pandas as pd
-from helper_functions import PROCESSED_DIR
+from utils.helper_functions import PROCESSED_DIR
 
 dataset_centroid = pd.read_parquet(
     PROCESSED_DIR
