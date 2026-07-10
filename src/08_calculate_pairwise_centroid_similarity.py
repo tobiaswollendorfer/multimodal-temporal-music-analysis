@@ -47,9 +47,9 @@ for centroids in datasets.values():
             total_pairs += comb(len(window_data), 2)
 
 print(f"Total genre pairs: {total_pairs:,}")
-
 rows = []
 completed_pairs = 0
+next_progress_report = 10
 start_time = time.time()
 
 for modality, centroids in datasets.items():
@@ -112,38 +112,42 @@ for modality, centroids in datasets.items():
 
         completed_pairs += window_pairs
 
-        elapsed_seconds = time.time() - start_time
-        pairs_per_second = (
-            completed_pairs / elapsed_seconds
-            if elapsed_seconds > 0
-            else 0
-        )
-
-        remaining_pairs = total_pairs - completed_pairs
-        remaining_seconds = (
-            remaining_pairs / pairs_per_second
-            if pairs_per_second > 0
-            else 0
-        )
-
-        finish_time = datetime.now() + timedelta(
-            seconds=remaining_seconds
-        )
-
         progress = (
             completed_pairs / total_pairs * 100
             if total_pairs > 0
             else 100
         )
 
-        print(
-            f"{modality} | window {window_start} | "
-            f"{progress:.1f}% | "
-            f"{completed_pairs:,}/{total_pairs:,} pairs | "
-            f"ETA {finish_time:%H:%M:%S} | "
-            f"remaining {timedelta(seconds=int(remaining_seconds))}"
-        )
+        if progress >= next_progress_report:
+            elapsed_seconds = time.time() - start_time
 
+            pairs_per_second = (
+                completed_pairs / elapsed_seconds
+                if elapsed_seconds > 0
+                else 0
+            )
+
+            remaining_pairs = total_pairs - completed_pairs
+
+            remaining_seconds = (
+                remaining_pairs / pairs_per_second
+                if pairs_per_second > 0
+                else 0
+            )
+
+            finish_time = datetime.now() + timedelta(
+                seconds=remaining_seconds
+            )
+
+            print(
+                f"{next_progress_report}% | "
+                f"{completed_pairs:,}/{total_pairs:,} pairs | "
+                f"ETA {finish_time:%H:%M:%S} | "
+                f"remaining {timedelta(seconds=int(remaining_seconds))}"
+            )
+
+            while progress >= next_progress_report:
+                next_progress_report += 10
 pairwise_similarity = pd.DataFrame(rows)
 
 print(pairwise_similarity.head())
