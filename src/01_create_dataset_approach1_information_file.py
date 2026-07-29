@@ -339,7 +339,7 @@ def main() -> None:
     args = parser.parse_args()
     script_start = time.time()
 
-    output_dir = PROCESSED_DIR / "09_selected_genres_metadata"
+    output_dir = PROCESSED_DIR / "01_selected_genres_metadata"
     output_dir.mkdir(parents=True, exist_ok=True)
 
     print("Loading release metadata")

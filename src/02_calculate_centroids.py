@@ -55,7 +55,7 @@ metadata_columns = [
 
 
 def load_ortools_assignment(prefix: str) -> tuple[pd.DataFrame, pd.DataFrame]:
-    assignment_dir = PROCESSED_DIR / "09_selected_genres_ortools"
+    assignment_dir = PROCESSED_DIR / "01_selected_genres_ortools"
 
     assignments = pd.read_parquet(
         assignment_dir / f"{prefix}_assignments.parquet"

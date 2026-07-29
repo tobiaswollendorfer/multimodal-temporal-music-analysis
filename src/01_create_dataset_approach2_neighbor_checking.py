@@ -661,7 +661,7 @@ def main() -> None:
     args = parser.parse_args()
     script_start = time.time()
 
-    output_dir = PROCESSED_DIR / "09_selected_genres_local_optimization"
+    output_dir = PROCESSED_DIR / "01_selected_genres_local_optimization"
     output_dir.mkdir(parents=True, exist_ok=True)
 
     genre_score_path = find_genre_score_path()
