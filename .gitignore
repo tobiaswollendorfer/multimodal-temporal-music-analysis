@@ -2,9 +2,13 @@ __pycache__/
 *.pyc
 .idea/
 .ipynb_checkpoints/
-data/
+data/processed/essentia.parquet
+data/processed/lyrics_tf_idf.parquet
+data/processed/mfcc.parquet
+data/processed/musicnn.parquet
+data/processed/vgg19.parquet
+data/processed/word2vec.parquet
 outputs/
-*.parquet
-data/
+data/raw/
 good_to_know/
 papers/
