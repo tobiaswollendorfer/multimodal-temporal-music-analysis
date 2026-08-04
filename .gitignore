@@ -1,11 +1,11 @@
 __pycache__/
 *.pyc
+
 .idea/
 .ipynb_checkpoints/
 
 data/raw/
 data/processed/*.parquet
-
 
 outputs/
 good_to_know/
