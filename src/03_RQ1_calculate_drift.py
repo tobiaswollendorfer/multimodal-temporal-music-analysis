@@ -153,20 +153,33 @@ def calculate_centroid_drift(
 
 
 def summarize_modality_drift(drift_neighbors: pd.DataFrame) -> pd.DataFrame:
-    return (
+    genre_level_drift = (
         drift_neighbors
-        .groupby("modality")
+        .groupby(["modality", "genre"])
         .agg(
             n_transitions=("cosine_distance", "size"),
-            n_genres=("genre", "nunique"),
             mean_cosine_distance=("cosine_distance", "mean"),
-            median_cosine_distance=("cosine_distance", "median"),
-            std_cosine_distance=("cosine_distance", "std"),
             mean_euclidean_distance=("euclidean_distance", "mean"),
-            median_euclidean_distance=("euclidean_distance", "median"),
-            std_euclidean_distance=("euclidean_distance", "std"),
             median_tracks_t=("n_tracks_t", "median"),
             median_tracks_t1=("n_tracks_t1", "median"),
+        )
+        .reset_index()
+    )
+
+    return (
+        genre_level_drift
+        .groupby("modality")
+        .agg(
+            n_transitions=("n_transitions", "sum"),
+            n_genres=("genre", "nunique"),
+            mean_cosine_distance=("mean_cosine_distance", "mean"),
+            median_cosine_distance=("mean_cosine_distance", "median"),
+            std_cosine_distance=("mean_cosine_distance", "std"),
+            mean_euclidean_distance=("mean_euclidean_distance", "mean"),
+            median_euclidean_distance=("mean_euclidean_distance", "median"),
+            std_euclidean_distance=("mean_euclidean_distance", "std"),
+            median_tracks_t=("median_tracks_t", "median"),
+            median_tracks_t1=("median_tracks_t1", "median"),
         )
         .reset_index()
         .sort_values("mean_cosine_distance", ascending=False)
