@@ -10,8 +10,8 @@ good_to_know/
 papers/
 
 data/processed/03_ortools_centroids/vgg19_ortools_centroids_raw_windowed.parquet 
-data/processed/03_ortools_centroids/vgg19_ortools_centroids_wpz_windowed.parquet 
-data/processed/RQ2_lyrics_tfidf_interpretable_features/lyrics_tfidf_windowed_tracks
+data/processed/03_ortools_centroids/vgg19_ortools_centroids_wpz_windowed.parquet
+data/processed/RQ2_lyrics_tfidf_interpretable_features/lyrics_tfidf_windowed_tracks.csv 
 good_to_know/
 papers/
 
