@@ -1,0 +1,2 @@
+test,distance,analysis,statistic,p_value,n_modalities,n_transitions,note
+Kruskal-Wallis,cosine,non_overlapping,221.01721196013295,8.996252971511866e-46,6,2392,Tests whether non-overlapping drift distributions differ across modalities.

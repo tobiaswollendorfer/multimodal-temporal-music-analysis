@@ -1,0 +1,2 @@
+test,distance,analysis,statistic,p_value,n_modalities,n_paired_genres,note
+Friedman repeated-measures test,cosine,non_overlapping_genre_level,226.46857142857152,6.110060382496666e-47,6,50,Genre is the paired unit. The test evaluates whether genre-level within-period-standardized cosine drift differs across modalities.
