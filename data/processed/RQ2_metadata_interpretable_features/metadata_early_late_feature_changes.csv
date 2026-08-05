@@ -1,0 +1,251 @@
+genre,late_minus_early,feature
+alternative rock,,danceability
+ambient,0.07123996407723393,danceability
+black metal,-0.18302484725050921,danceability
+blues,0.01642883015082841,danceability
+bossa nova,0.07190168652328632,danceability
+brazilian rock,0.011824675324675238,danceability
+classic rock,-0.005892651133215243,danceability
+country,-0.008495337362412814,danceability
+death metal,,danceability
+disco,0.14110245310245317,danceability
+doom metal,0.0005545335085413439,danceability
+dream pop,,danceability
+easy listening,0.10473279304674654,danceability
+electronic,0.2527354154418969,danceability
+experimental,0.03937361009643475,danceability
+folk,0.00364271404478389,danceability
+funk,0.07062595332693977,danceability
+glam rock,0.05954503816793888,danceability
+gothic rock,,danceability
+grunge,,danceability
+hard rock,0.0007473405118053611,danceability
+hardcore,,danceability
+hardcore punk,,danceability
+indie rock,,danceability
+industrial,,danceability
+jazz,0.0907909275548226,danceability
+latin,0.15403596345514953,danceability
+metal,0.052530026485490544,danceability
+mpb,0.08945819677398625,danceability
+new wave,,danceability
+pop,0.10849864936945175,danceability
+pop rock,0.0246546299799989,danceability
+post-hardcore,,danceability
+post-punk,,danceability
+power metal,,danceability
+progressive metal,,danceability
+progressive rock,0.016096936274509865,danceability
+psychedelic rock,-0.011156000575134994,danceability
+punk,0.06306733853489377,danceability
+rap,,danceability
+reggae,-0.030968337119280487,danceability
+rock,-0.027683214871514428,danceability
+samba,0.041977650219833795,danceability
+shoegaze,,danceability
+singer-songwriter,0.052122369827304504,danceability
+soft rock,0.042153321678321753,danceability
+soul,0.03129863522628895,danceability
+soundtrack,-0.09211413639836108,danceability
+synthpop,0.07592700296735899,danceability
+thrash metal,,danceability
+alternative rock,,energy
+ambient,0.028223112408322093,energy
+black metal,0.3334625254582483,energy
+blues,0.08451622520246677,energy
+bossa nova,0.0012886151941822743,energy
+brazilian rock,-0.05807142857142844,energy
+classic rock,0.049708940061467644,energy
+country,0.24369960701877313,energy
+death metal,,energy
+disco,0.06025257335257339,energy
+doom metal,0.17257582128777915,energy
+dream pop,,energy
+easy listening,0.17073163025604887,energy
+electronic,0.1969971949074074,energy
+experimental,0.049402564472530774,energy
+folk,0.16913531189539244,energy
+funk,0.06548744424654818,energy
+glam rock,0.17770608373814478,energy
+gothic rock,,energy
+grunge,,energy
+hard rock,0.1790799725924921,energy
+hardcore,,energy
+hardcore punk,,energy
+indie rock,,energy
+industrial,,energy
+jazz,0.1538926617188932,energy
+latin,0.21629324197120708,energy
+metal,0.33851815983417766,energy
+mpb,0.015492776229618366,energy
+new wave,,energy
+pop,0.1856390196974892,energy
+pop rock,0.21394616044110493,energy
+post-hardcore,,energy
+post-punk,,energy
+power metal,,energy
+progressive metal,,energy
+progressive rock,0.11531889215686275,energy
+psychedelic rock,0.15067967110798697,energy
+punk,0.06014487790781686,energy
+rap,,energy
+reggae,0.15339594826387276,energy
+rock,0.1744212037837235,energy
+samba,0.013599523693209603,energy
+shoegaze,,energy
+singer-songwriter,0.15362571686440618,energy
+soft rock,0.15057645104895107,energy
+soul,0.08388659144316857,energy
+soundtrack,-0.08282031981387594,energy
+synthpop,0.3209444231454006,energy
+thrash metal,,energy
+alternative rock,,valence
+ambient,-0.003540797784762739,valence
+black metal,-0.5548838085539715,valence
+blues,-0.08533598892934102,valence
+bossa nova,-0.058169147454742276,valence
+brazilian rock,-0.09269437229437227,valence
+classic rock,-0.08959764121663549,valence
+country,-0.12227829727599199,valence
+death metal,,valence
+disco,-0.034102813852813885,valence
+doom metal,-0.14170275952693825,valence
+dream pop,,valence
+easy listening,0.03193921775898517,valence
+electronic,0.19216296541250244,valence
+experimental,-0.15496751899473993,valence
+folk,-0.10983660025261194,valence
+funk,-0.07898437152730198,valence
+glam rock,-0.0598543603978719,valence
+gothic rock,,valence
+grunge,,valence
+hard rock,-0.11398575239898445,valence
+hardcore,,valence
+hardcore punk,,valence
+indie rock,,valence
+industrial,,valence
+jazz,0.03705111630321911,valence
+latin,0.03195953765227022,valence
+metal,-0.12593743090741588,valence
+mpb,-0.07580364430890751,valence
+new wave,,valence
+pop,-0.07805841238998734,valence
+pop rock,-0.20447962052002822,valence
+post-hardcore,,valence
+post-punk,,valence
+power metal,,valence
+progressive metal,,valence
+progressive rock,-0.15780894607843143,valence
+psychedelic rock,-0.05881448951443696,valence
+punk,-0.03732008621104854,valence
+rap,,valence
+reggae,-0.050546469797413285,valence
+rock,-0.1758628206258782,valence
+samba,-0.08616444797264289,valence
+shoegaze,,valence
+singer-songwriter,-0.05732837571895033,valence
+soft rock,-0.060208085664335664,valence
+soul,-0.16715094069014064,valence
+soundtrack,-0.3139699458295714,valence
+synthpop,-0.3027121068249258,valence
+thrash metal,,valence
+alternative rock,,tempo
+ambient,-5.620250411615018,tempo
+black metal,10.83860794297351,tempo
+blues,-1.147532357530281,tempo
+bossa nova,-3.9689199752436934,tempo
+brazilian rock,18.978889610389615,tempo
+classic rock,-0.8742038500552525,tempo
+country,8.950375860558822,tempo
+death metal,,tempo
+disco,-9.207610630110636,tempo
+doom metal,19.724240473061755,tempo
+dream pop,,tempo
+easy listening,8.999641883955846,tempo
+electronic,9.159282456398188,tempo
+experimental,6.253658880040916,tempo
+folk,1.1838524009082363,tempo
+funk,2.0610673379915028,tempo
+glam rock,1.8131489243580887,tempo
+gothic rock,,tempo
+grunge,,tempo
+hard rock,6.266372129742109,tempo
+hardcore,,tempo
+hardcore punk,,tempo
+indie rock,,tempo
+industrial,,tempo
+jazz,3.0888844603261703,tempo
+latin,7.851275304540422,tempo
+metal,-0.1269992514970113,tempo
+mpb,6.547894397999642,tempo
+new wave,,tempo
+pop,4.115956776012496,tempo
+pop rock,1.8939304286718226,tempo
+post-hardcore,,tempo
+post-punk,,tempo
+power metal,,tempo
+progressive metal,,tempo
+progressive rock,3.7612218137254843,tempo
+psychedelic rock,3.5172699300252503,tempo
+punk,9.838387853393073,tempo
+rap,,tempo
+reggae,5.737205739186891,tempo
+rock,6.578792627148033,tempo
+samba,4.191400586223736,tempo
+shoegaze,,tempo
+singer-songwriter,3.3488880157339906,tempo
+soft rock,1.195737937062944,tempo
+soul,-2.368922915735098,tempo
+soundtrack,-5.9288070699354165,tempo
+synthpop,-36.40304629080117,tempo
+thrash metal,,tempo
+alternative rock,,duration_ms
+ambient,-293731.7335353989,duration_ms
+black metal,194665.3095723014,duration_ms
+blues,15340.096255293873,duration_ms
+bossa nova,20123.729970601882,duration_ms
+brazilian rock,41484.727272727265,duration_ms
+classic rock,12080.53732721685,duration_ms
+country,37285.468319173146,duration_ms
+death metal,,duration_ms
+disco,54732.93169793169,duration_ms
+doom metal,37407.856767411286,duration_ms
+dream pop,,duration_ms
+easy listening,43353.11158092556,duration_ms
+electronic,-105060.76484420928,duration_ms
+experimental,25661.215371127968,duration_ms
+folk,28707.859336784226,duration_ms
+funk,-37214.31937403904,duration_ms
+glam rock,-596.5614619477128,duration_ms
+gothic rock,,duration_ms
+grunge,,duration_ms
+hard rock,-21214.52005415302,duration_ms
+hardcore,,duration_ms
+hardcore punk,,duration_ms
+indie rock,,duration_ms
+industrial,,duration_ms
+jazz,-56982.98381283978,duration_ms
+latin,17388.807419712073,duration_ms
+metal,-74764.36953017046,duration_ms
+mpb,37309.508362982044,duration_ms
+new wave,,duration_ms
+pop,40525.20162304264,duration_ms
+pop rock,6929.50429752958,duration_ms
+post-hardcore,,duration_ms
+post-punk,,duration_ms
+power metal,,duration_ms
+progressive metal,,duration_ms
+progressive rock,-14777.229166666686,duration_ms
+psychedelic rock,25103.4425237776,duration_ms
+punk,-50935.235394692456,duration_ms
+rap,,duration_ms
+reggae,14133.391405127244,duration_ms
+rock,42711.435580874444,duration_ms
+samba,30542.2484123107,duration_ms
+shoegaze,,duration_ms
+singer-songwriter,17909.203737190343,duration_ms
+soft rock,32635.55541958043,duration_ms
+soul,31728.359693270788,duration_ms
+soundtrack,32183.156816445582,duration_ms
+synthpop,10458.478931750753,duration_ms
+thrash metal,,duration_ms

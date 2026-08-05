@@ -1,0 +1,7 @@
+modality,n_selected_genres,total_valid_genre_windows,mean_valid_windows_per_genre,median_valid_windows_per_genre,min_valid_windows_per_genre,max_valid_windows_per_genre,total_tracks,mean_genre_score
+essentia,50,1912,38.24,33.5,25,60,377768,1.0
+lyrics_tf_idf,50,1912,38.24,33.5,25,60,378080,1.0
+mfcc,50,1912,38.24,33.5,25,60,378080,1.0
+musicnn,50,1912,38.24,33.5,25,60,378075,1.0
+vgg19,50,1838,36.76,32.0,22,59,340563,1.0
+word2vec,50,1912,38.24,33.5,25,60,378080,1.0

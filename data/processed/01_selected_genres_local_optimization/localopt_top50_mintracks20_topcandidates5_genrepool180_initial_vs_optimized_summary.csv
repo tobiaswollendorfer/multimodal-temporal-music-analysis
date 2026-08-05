@@ -1,0 +1,7 @@
+modality,n_selected_genres_initial,total_valid_genre_windows_initial,mean_valid_windows_per_genre_initial,median_valid_windows_per_genre_initial,min_valid_windows_per_genre_initial,max_valid_windows_per_genre_initial,total_tracks_initial,mean_genre_score_initial,n_selected_genres_optimized,total_valid_genre_windows_optimized,mean_valid_windows_per_genre_optimized,median_valid_windows_per_genre_optimized,min_valid_windows_per_genre_optimized,max_valid_windows_per_genre_optimized,total_tracks_optimized,mean_genre_score_optimized,valid_window_gain
+essentia,50,1975,39.5,36.5,27,61,290922,2.725481082554706,50,2010,40.2,37.5,28,61,282079,2.7420968773810563,35
+lyrics_tf_idf,50,1975,39.5,36.5,27,61,291202,2.7255550055538116,50,2010,40.2,37.5,28,61,282354,2.7421573404149195,35
+mfcc,50,1975,39.5,36.5,27,61,291202,2.7255550055538116,50,2010,40.2,37.5,28,61,282354,2.7421573404149195,35
+musicnn,50,1975,39.5,36.5,27,61,291197,2.7255580520593203,50,2010,40.2,37.5,28,61,282349,2.7421603875211162,35
+vgg19,50,1882,37.64,34.5,22,61,262125,2.7254574360819244,50,1926,38.52,36.0,23,61,253803,2.7430139494452446,44
+word2vec,50,1975,39.5,36.5,27,61,291202,2.7255550055538116,50,2010,40.2,37.5,28,61,282354,2.7421573404149195,35
