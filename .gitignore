@@ -4,9 +4,13 @@ __pycache__/
 .idea/
 .ipynb_checkpoints/
 
-data/raw/
-data/processed/*.parquet
 
 outputs/
+good_to_know/
+papers/
+
+data/processed/03_ortools_centroids/vgg19_ortools_centroids_raw_windowed.parquet 
+data/processed/03_ortools_centroids/vgg19_ortools_centroids_wpz_windowed.parquet 
+data/processed/RQ2_lyrics_tfidf_interpretable_features/lyrics_tfidf_windowed_tracks
 good_to_know/
 papers/
