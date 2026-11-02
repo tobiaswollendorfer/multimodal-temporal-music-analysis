@@ -1,0 +1,51 @@
+genre,valid_windows,coverage_percent,first_valid_window
+alternative rock,37,60.66,1979
+ambient,41,67.21,1971
+black metal,34,55.74,1981
+blues,61,100.0,1955
+bossa nova,53,86.89,1961
+brazilian rock,34,55.74,1982
+britpop,31,50.82,1985
+classic rock,61,100.0,1955
+country,52,85.25,1955
+death metal,33,54.1,1983
+disco,46,75.41,1970
+doom metal,33,54.1,1983
+dream pop,34,55.74,1982
+easy listening,45,73.77,1959
+electronic,43,70.49,1973
+experimental,52,85.25,1964
+folk,54,88.52,1959
+funk,50,81.97,1966
+glam rock,38,62.3,1967
+gothic rock,34,55.74,1977
+grunge,32,52.46,1984
+hard rock,51,83.61,1965
+hardcore,39,63.93,1977
+indie rock,32,52.46,1984
+industrial,35,57.38,1981
+jazz,60,98.36,1955
+latin,40,65.57,1965
+metal,42,68.85,1974
+mpb,53,86.89,1963
+new wave,43,70.49,1973
+pop,57,93.44,1959
+post-hardcore,31,50.82,1985
+post-punk,43,70.49,1973
+power metal,34,55.74,1981
+progressive metal,32,52.46,1984
+progressive rock,53,86.89,1963
+psychedelic rock,47,77.05,1963
+punk,47,77.05,1969
+rap,32,52.46,1984
+reggae,42,68.85,1969
+rock,61,100.0,1955
+samba,41,67.21,1963
+shoegaze,35,57.38,1981
+singer-songwriter,55,90.16,1961
+ska,31,50.82,1977
+soft rock,49,80.33,1967
+soul,60,98.36,1956
+soundtrack,44,72.13,1965
+synthpop,41,67.21,1975
+thrash metal,37,60.66,1979

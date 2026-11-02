@@ -1,0 +1,4 @@
+modality,total_numeric_features,features_with_valid_smd,features_with_valid_top2_smd,features_with_bootstrap_ci
+metadata,8,8,8,8
+essentia,1034,845,845,842
+lyrics_tf_idf,1000,1000,1000,1000

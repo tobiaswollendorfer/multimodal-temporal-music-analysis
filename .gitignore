@@ -16,4 +16,7 @@ good_to_know/
 papers/
 
 data/raw/
-data/processed/*.parquet
+data/processed/*.parquet/data/processed/10_ortools_representativeness/selected_vs_baseline_feature_comparisons.parquet
+/data/processed/08_baseline_feature_statistics/baseline_all_modalities.parquet
+/data/processed/08_baseline_feature_statistics/baseline_essentia.parquet
+/notebooks/dataset/final_dataset_storyline/plots/feature_genre_window_smd.parquet

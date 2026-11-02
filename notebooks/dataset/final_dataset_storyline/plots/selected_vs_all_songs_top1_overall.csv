@@ -1,0 +1,4 @@
+comparison,median_absolute_common_sd_difference,compared_cells
+Selected vs Top-1,0.017841491721999003,3525586
+All songs vs Top-1,0.09297602799948951,3525586
+Assigned Top-2 vs Top-1,0.08330356234997469,1849079
